@@ -1,0 +1,251 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Max width container */
+.max-width {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0px 4px 2px -2px gray;
+    z-index: 1000;
+}
+
+.navbar .max-width {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .menu li {
+    margin-left: 20px;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Menu button for small screens */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .navbar .menu.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Section padding */
+section {
+    padding: 60px 0;
+}
+
+/* Home Section */
+.home {
+    background: url('Images/IMG-20221001-WA0001.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .home-content {
+    max-width: 600px;
+}
+
+.home-content .text-1,
+.home-content .text-2,
+.home-content .text-3 {
+    color: rgb(11, 176, 226);
+}
+
+.home-content a {
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.home-content a:hover {
+    color: darkred;
+}
+
+/* About, Skills, Contact Sections */
+.about, .skills, .contact {
+    background-color: #fff;
+}
+
+.about-content, .contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-content .column {
+    flex: 1;
+    margin: 20px;
+}
+
+.about-content .column.left img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-content .column.right .text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.bars .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* Spinner and Download Message */
+#loading-spinner, #download-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#download-message {
+    background: #4caf50;
+    color: #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Progress Line */
+.line {
+    position: relative;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: #333;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.html.line::after { width: 90%; }
+.css.line::after { width: 90%; }
+.java.line::after { width: 85%; }
+.javascript.line::after { width: 85%; }
+.python.line::after { width: 90%; }
+.flutter.line::after { width: 80%; }
+.sqlite.line::after { width: 75%; }
+.firebase.line::after { width: 80%; }
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer span {
+    font-size: 14px;
+}
+
+/* Row Styling */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content horizontally */
+    margin-bottom: 15px;
+}
+
+.row i {
+    font-size: 30px; /* Icon size */
+    color: #4CAF50; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+    display: flex;
+    justify-content: center; /* Ensures the icon is centered */
+    align-items: center; /* Vertically centers the icon */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark color for header */
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #555; /* Lighter gray for subtitle */
+    word-wrap: break-word; /* Ensure the email doesn't break out of the box */
+}
